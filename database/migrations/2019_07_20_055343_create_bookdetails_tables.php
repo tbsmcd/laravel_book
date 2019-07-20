@@ -13,7 +13,7 @@ class CreateBookdetailsTables extends Migration
      */
     public function up()
     {
-        Schema::create('bookdetails_tables', function (Blueprint $table) {
+        Schema::create('bookdetails', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('isbn', '100');
             $table->date('published_date');
