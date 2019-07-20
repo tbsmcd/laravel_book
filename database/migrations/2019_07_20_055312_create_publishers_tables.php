@@ -15,6 +15,8 @@ class CreatePublishersTables extends Migration
     {
         Schema::create('publishers_tables', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name', '100');
+            $table->text('address');
             $table->timestamps();
         });
     }
