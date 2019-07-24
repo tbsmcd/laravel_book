@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Author extends Model
 {
+    use SoftDeletes;
     // 規約に反したパターンだとこうなる
     // protected $table = 't_author';
     // あえて id 以外をプライマリーキーとする場合
