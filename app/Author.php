@@ -25,5 +25,10 @@ class Author extends Model
 //        'created_at',
 //        'updated_at'
 //    ];
+    public function books()
+    {
+        // author has many books
+        return $this->hasMany('\App\Book');
+    }
 
 }
