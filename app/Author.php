@@ -23,5 +23,5 @@ class Author extends Model
 //        'created_at',
 //        'updated_at'
 //    ];
-    
+
 }
