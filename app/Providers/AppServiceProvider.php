@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\DataProvider\FavoriteRepository;
+use App\DataProvider\FavoriteRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(
+            FavoriteRepositoryInterface::class,
+            FavoriteRepository::class
+        );
     }
 
     /**
