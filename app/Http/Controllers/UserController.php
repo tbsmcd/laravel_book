@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\UserRegistPost;
 
 class UserController extends Controller
 {
-    public function register(Request $request)
+    public function register(UserRegistPost $request)
     {
         $name = $request->input('name');
         $age = $request->input('age');
