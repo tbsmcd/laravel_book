@@ -4,7 +4,14 @@
 </head>
 <body>
 <h1>ユーザ登録フォーム</h1>
-<form name="registform" action="/auth/register" method="post">
+<ul>
+    @if(count($errors)>0)
+        @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    @endif
+</ul>
+<form name="registform" action="/user/register" method="post">
     {{ csrf_field() }}
     名前: <input type="text" name="name" size="30"><span>{{ $errors->first('name') }}</span><br />
     メールアドレス: <input type="text" name="email" size="30"><span>{{ $errors->first('email') }}</span><br />

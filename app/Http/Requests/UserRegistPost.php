@@ -16,6 +16,13 @@ class UserRegistPost extends FormRequest
         return true; // 便宜上
     }
 
+    public function messages()
+    {
+        return [
+            'name.required' => '名前は必須です',
+            // 略
+        ];
+    }
     /**
      * Get the validation rules that apply to the request.
      *
@@ -24,7 +31,8 @@ class UserRegistPost extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => ['required', 'max:20'],
+            'email' => ['required', 'max:25']
         ];
     }
 }
