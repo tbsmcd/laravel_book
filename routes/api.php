@@ -17,4 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('/action/favorite', 'FavoriteActionController@switchFavorite');
-Rourw::get('/payload', 'ArticlePayloadAction');
+Route::get('/payload', 'ArticlePayloadAction');
