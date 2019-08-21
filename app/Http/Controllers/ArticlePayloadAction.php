@@ -23,6 +23,6 @@ final class ArticlePayloadAction extends Controller
             'user_id' => 2000,
             'user_name' => 'user1'
         ]);
-        return $resource->response($request)->header('content-type', 'application-json');
+        return $resource->response($request)->header('content-type', 'application/hal+json');
     }
 }
