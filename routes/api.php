@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 
 // 11章
 Route::get('customers', function() {});
-
+Route::post('customers', function() {});
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
