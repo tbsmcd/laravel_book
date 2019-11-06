@@ -13,7 +13,7 @@ class HeaderDumper
 
     public function __construct(LoggerInterface $logger)
     {
-        $this->logger = $lopgger;
+        $this->logger = $logger;
     }
 
     /**

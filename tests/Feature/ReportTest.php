@@ -13,7 +13,7 @@ class ReportTest extends TestCase
      */
     public function api_test_access_able()
     {
-
+        $response = $this->get('api/customers');
         $response->assertStatus(200);
     }
 }
