@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 
 // 11章
 Route::get('customers', function() {
-    return response()->json();
+    return response()->json(\App\Customer::query()->get());
 });
 Route::post('customers', function() {});
 
