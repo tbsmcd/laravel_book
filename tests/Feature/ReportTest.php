@@ -144,4 +144,12 @@ class ReportTest extends TestCase
         $this->assertSame(['id', 'name'], array_keys($customer));
     }
 
+    /**
+     * @test
+     */
+    public function api_customer_returns_2customers_type_if_GET()
+    {
+        $response = $this->get('api/customers');
+        $response->assertJsonCount(2);
+    }
 }
