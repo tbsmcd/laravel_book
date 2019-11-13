@@ -8,6 +8,14 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ReportTest extends TestCase
 {
+    use RefreshDatabase; // ここでマイグレーション
+
+    public function setUp(): void
+    {
+        parent::setUp();
+        $this->artisan('db:seed', ['--class' => 'TestDataSeeder']);
+    }
+
     /**
      * @test
      */
@@ -115,5 +123,15 @@ class ReportTest extends TestCase
         $response = $this->delete('api/reports/1');
         $response->assertStatus(200);
     }
+
+    /**
+     * @test
+     */
+    public function api_customer_returns_JSON_if_GET()
+    {
+        $response = $this->get('api/customers');
+        $this->assertThat($response->content(), $this->isJson());
+    }
+
 
 }
