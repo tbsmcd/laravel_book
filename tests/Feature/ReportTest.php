@@ -173,4 +173,13 @@ class ReportTest extends TestCase
         $response->assertStatus(\Illuminate\Http\Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 
+    /**
+     * @test
+     */
+    public function api_customer_POST_empty_returns_422()
+    {
+        $params = ['name' => ''];
+        $response = $this->postJson('api/customers', $params);
+        $response->assertStatus(\Illuminate\Http\Response::HTTP_UNPROCESSABLE_ENTITY);
+    }
 }
