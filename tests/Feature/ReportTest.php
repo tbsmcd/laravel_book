@@ -152,4 +152,14 @@ class ReportTest extends TestCase
         $response = $this->get('api/customers');
         $response->assertJsonCount(2);
     }
+
+    /**
+     * @test
+     */
+    public function api_customer_POST()
+    {
+        $params = ['name' => '顧客名'];
+        $this->postJson('api/customers', $params);
+        $this->assertDatabaseHas('customers', $params);
+    }
 }
