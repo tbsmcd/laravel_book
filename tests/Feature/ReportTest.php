@@ -15,7 +15,7 @@ class ReportTest extends TestCase
         parent::setUp();
         $this->artisan('db:seed', ['--class' => 'TestDataSeeder']);
     }
-
+  
     /**
      * @test
      */
