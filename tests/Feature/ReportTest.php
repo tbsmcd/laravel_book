@@ -30,7 +30,7 @@ class ReportTest extends TestCase
      */
     public function api_customers_post_access_able()
     {
-        $response = $this->post('api/customers');
+        $response = $this->postJson('api/customers', ['name' => 'hoge']);
         $response->assertStatus(200);
     }
 
