@@ -162,4 +162,15 @@ class ReportTest extends TestCase
         $this->postJson('api/customers', $params);
         $this->assertDatabaseHas('customers', $params);
     }
+
+    /**
+     * @test
+     */
+    public function api_customer_POST_without_name_returns_422()
+    {
+        $params = [];
+        $response = $this->postJson('api/customers', $params);
+        $response->assertStatus(\Illuminate\Http\Response::HTTP_UNPROCESSABLE_ENTITY);
+    }
+
 }
